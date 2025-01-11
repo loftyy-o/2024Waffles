@@ -8,6 +8,8 @@ from wpilib.shuffleboard import BuiltInWidgets, Shuffleboard
 from commands.drive_maintain_heading import DriveMaintainHeadingCommand
 from constants import Constants
 from subsystems.drive.drivetrain import Drivetrain
+from subsystems.climber import ClimberSubsystem
+import commands2
 
 class RobotContainer:
 
@@ -59,3 +61,7 @@ class RobotContainer:
                 5 # Amount the robot needs to move before it rotates (when pathfinding, in meters)
             )
         )
+
+        commands2.button.JoystickButton(self.driver_controller, XboxController.Button.kY).whileTrue(ClimberSubsystem.climb_positive()).onFalse(self.climber.climb_stop())
+        
+        commands2.button.JoystickButton(self.driver_controller, XboxController.Button.kA).whileTrue(ClimberSubsystem.climb_negative()).onFalse(self.climber.climb_stop())

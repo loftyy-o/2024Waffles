@@ -66,6 +66,8 @@ class Constants:
         k_right_front_direction = 7
         k_right_rear_direction = 8
         
+        
+        
         # CANcoders
         k_left_front_encoder = 5
         k_left_rear_encoder = 6
@@ -84,3 +86,6 @@ class Constants:
         k_use_mega_tag_2 = True # If False, uses MegaTag 1.
         
         k_standard_deviations = [0.3, 0.3, 99999] # (x, y, radians) Basically how confident we are with our vision, lower = more confident. Angle is set really high because we have a gyro.
+
+#climb motor
+climbMotor = 10
