@@ -62,6 +62,6 @@ class RobotContainer:
             )
         )
 
-        commands2.button.JoystickButton(self.driver_controller, XboxController.Button.kY).whileTrue(ClimberSubsystem.climb_positive()).onFalse(self.climber.climb_stop())
+        commands2.button.JoystickButton(self.driver_controller, XboxController.Button.kY).whileTrue(ClimberSubsystem.climb_positive()).onFalse(ClimberSubsystem.climb_stop())
         
-        commands2.button.JoystickButton(self.driver_controller, XboxController.Button.kA).whileTrue(ClimberSubsystem.climb_negative()).onFalse(self.climber.climb_stop())
+        commands2.button.JoystickButton(self.driver_controller, XboxController.Button.kA).whileTrue(ClimberSubsystem.climb_negative()).onFalse(ClimberSubsystem.climb_stop())
